@@ -50,9 +50,6 @@ look like this :
 ....
 ```
 
-5. now restart your wsl to check whether the bash work 
-```
-in windows cmd: 
-wsl --shutdown 
-wsl -d <distro>   or "wsl" to run default distro 
-```
+5. now restart your wsl to check whether the bash work ,
+(run wsl --shutdown  to close wsl )
+
