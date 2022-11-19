@@ -8,14 +8,14 @@ gerardog/gsudo: A Sudo for Windows
 https://github.com/gerardog/gsudo
 
 
-
-add gsudo and powershell to path:
+1. download gsudo in windows,  
+then add gsudo and powershell to path:
 ```bash
 export PATH=/mnt/c/Users/pcmsi/scoop/apps/gsudo/current/:$PATH
 export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0:$PATH
 ```
 
-define the function to modify windows hosts file (C:\Windows\System32\drivers\etc\hosts in windows 
+2. define the function to modify windows hosts file (C:\Windows\System32\drivers\etc\hosts in windows 
 or /mnt/c/Windows/System32/drivers/etc/hosts in WSL)
 
 ```bash
@@ -40,8 +40,9 @@ change_wsl_ssh_ip(){
   fi
 }
 ```
+3. add change_wsl_ssh_ip to .bashrc
 
-finaly add your host name to windows hosts, ip can be arbitrary,it will be replace with real value;  
+4. finaly add your host name to windows hosts, ip can be arbitrary,it will be replaced with real value;  
 look like this :
 ```text
 .....
@@ -49,7 +50,7 @@ look like this :
 ....
 ```
 
-now restart your wsl to check whether the bash work 
+5. now restart your wsl to check whether the bash work 
 ```
 in windows cmd: 
 wsl --shutdown 
