@@ -1,6 +1,6 @@
 # Bash-wsl2-host
 [English DOC](README.md)
-## 一个bash脚本实现自动更新windows hosts映射到WSL的ip地址
+## 一个bash脚本实现自动更新windows hosts,来映射到WSL的ip地址
 
 只需要安装一个工具,叫gsudo,用来以管理员身份运行命令, 否则没有权限修改windows hosts文件
 
