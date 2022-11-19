@@ -1,4 +1,5 @@
 # Bash-wsl2-host
+[中文文档](README-CN.md)
 ## bash script to Automatically update your Windows hosts file with the WSL2 VM IP address 
 
 the only tool you need to install is "gsudo",it is used to run command with administrator
@@ -40,7 +41,7 @@ change_wsl_ssh_ip(){
 }
 ```
 
-finaly add your ip name to windows hosts
+finaly add your host name to windows hosts, ip can be arbitrary,it will be replace with real value;  
 look like this :
 ```text
 .....
