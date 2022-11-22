@@ -2,12 +2,13 @@
 [中文文档](README-CN.md)
 ## bash script to Automatically update your Windows hosts file with the WSL2 VM IP address 
 
+### Dependencies
 the only tool you need to install is "gsudo",it is used to run command with administrator
 
 gerardog/gsudo: A Sudo for Windows  
 https://github.com/gerardog/gsudo
 
-
+### Usage
 1. download gsudo in windows,  
 then add gsudo and powershell to path:
 ```bash
