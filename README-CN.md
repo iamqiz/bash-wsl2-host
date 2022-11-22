@@ -2,11 +2,14 @@
 [English DOC](README.md)
 ## 一个bash脚本实现自动更新windows hosts,来映射到WSL的ip地址
 
+### 依赖
 只需要安装一个工具,叫gsudo,用来以管理员身份运行命令, 否则没有权限修改windows hosts文件
 
 下载地址:
 gerardog/gsudo: A Sudo for Windows  
 https://github.com/gerardog/gsudo
+
+### 使用方法
 
 1. 首先需要在windows端安装好gsudo(我是通过scoop 下载gsudo的),   
 然后把命令的路径和powershell.exe的目录加到PATH环境变量里,如下:
