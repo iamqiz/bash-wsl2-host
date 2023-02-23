@@ -70,7 +70,7 @@ change_wsl_ssh_ip(){
   fi
 
   # resulting windows hosts
-  echo "$_wsl_ssh_ip_name 's ip is:"
+  echo "now $_wsl_ssh_ip_name 's ip is:"
   grep "$_wsl_ssh_ip_name" $_wslhosts
 }
 
@@ -78,13 +78,13 @@ change_wsl_ssh_ip
 
 ```
 
-3.在~/.bashrc里执行上面的bash脚本,(路径改成自己的):
+3. 在~/.bashrc里执行上面的bash脚本,(路径改成自己的):
 ```bash
 source  /path/to/wsl2hosts.sh
 ```
 这样每次启动wsl时,会自动执行bash脚本,如果ip发生变化,会进行修改
 
-4. 重启WSL看看效果,
+4. 重启WSL看看效果,  
 在windows cmd里执行 wsl --shutdown 来关闭所有wsl
 然后重启wsl, 控制台会打印win和wsl里的ip信息,如果不一致或不存在,会进行修改 
 
