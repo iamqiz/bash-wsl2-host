@@ -11,16 +11,14 @@ https://github.com/gerardog/gsudo
 
 ### 使用方法
 
-1. 首先需要在windows端安装好gsudo(我是通过scoop 下载gsudo的),   
-然后把命令的路径和powershell.exe的目录加到PATH环境变量里,如下:
-```bash
-export PATH=/mnt/c/Users/pcmsi/scoop/apps/gsudo/current/:$PATH
-export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0:$PATH
-```
+1. 首先需要在windows端安装好gsudo(我是通过scoop 下载gsudo的)
 
-2. 把修改 windows hosts ip的脚本放到函数里: 
-(注windows hosts 文件位置为: C:\Windows\System32\drivers\etc\hosts  
-在WSl里对应/mnt/c/Windows/System32/drivers/etc/hosts)
+2. 下载本仓库下的bash脚本,内容如下
+
+将你下载的gsudo和powershell.exe对应的wsl路径加到脚本里的PATH里 
+
+修改 脚本里 _wsl_ssh_ip_name 为你想要的名字,这里是 "ubuntu2004.wsl"
+
 
 ```bash
 # --------------------------------------------------------------------------------------------------
@@ -56,11 +54,6 @@ change_wsl_ssh_ip(){
   _win_ssh_ip_addr=$(grep -oP "\d+(\.\d+){3}(?=\s*$_wsl_ssh_ip_name)" $_wslhosts)
   echo "win ssh ip addr:[$_win_ssh_ip_addr]"
 
-  # get current entry from windows hosts
-  # _entry=`grep "$_wsl_ssh_ip_name" $_wslhosts`
-  # _entry=${_entry/$_win_ssh_ip_addr/$_wsl_ssh_ip_addr}
-  # echo "$_entry"
-
   # check if ip exists or diff, then modify
   if [[ "$_win_ssh_ip_addr" == "" ]]
   then
@@ -77,24 +70,27 @@ change_wsl_ssh_ip(){
   fi
 
   # resulting windows hosts
-  _hosts=`cat $_wslhosts`
-  echo "$_hosts"
+  echo "$_wsl_ssh_ip_name 's ip is:"
+  grep "$_wsl_ssh_ip_name" $_wslhosts
 }
 
 change_wsl_ssh_ip
 
 ```
 
-3. 然后把 change_wsl_ssh_ip 函数放到.bashrc 脚本里,让它每次启动都执行
+3.在~/.bashrc里执行上面的bash脚本,(路径改成自己的):
+```bash
+source  /path/to/wsl2hosts.sh
+```
+这样每次启动wsl时,会自动执行bash脚本,如果ip发生变化,会进行修改
 
-4. 把上一步定义的host名字写到 windows hosts文件里,前面的ip随便写,不写也行
+4. 重启WSL看看效果,
+在windows cmd里执行 wsl --shutdown 来关闭所有wsl
+然后重启wsl, 控制台会打印win和wsl里的ip信息,如果不一致或不存在,会进行修改 
 
+windows hosts文件里会出现下面的语句,(这里ip地址为示例) 
 ```text
 ...
 123.45.67.89  ubuntu2004.wsl 
 ...
 ```
-
-5. 重启WSL看看效果,
-在windows cmd里执行 wsl --shutdown 来关闭所有wsl
-然后重启wsl
