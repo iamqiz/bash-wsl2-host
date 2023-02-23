@@ -15,7 +15,6 @@
 export PATH=/mnt/c/Users/your-USERNAME/gsudo/x64/:$PATH
 export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:$PATH
 
-
 change_wsl_ssh_ip(){
   # define your dns name
   _wsl_ssh_ip_name="ubuntu2004.wsl"
@@ -52,6 +51,5 @@ change_wsl_ssh_ip(){
   grep "$_wsl_ssh_ip_name" $_wslhosts
 }
 
+# run the function
 change_wsl_ssh_ip
-
-

@@ -21,22 +21,11 @@ https://github.com/gerardog/gsudo
 
 
 ```bash
-# --------------------------------------------------------------------------------------------------
-# Name:        .wsl2hosts.sh
-# Version:     1.0.0
-# Date:        2023-02-21
-# Author:      berndgz inspired by https://github.com/iamqiz/bash-wsl2-host
-# Description: bash script to automatically update your Windows hosts file with the WSL2 VM IP addr.
-# Requirement: WSL2, WindowsPowerShell, https://github.com/gerardog/gsudo, elevated privileges.
-# Note:        gsudo is a sudo equivalent for Windows, with a similar user-experience.
-# Usage:       add location from gsudo and WindowsPowerShell to PATH environment variable.
-#              add this script to ~/.bashrc and define your dns name in '_wsl_ssh_ip_name' variable.
-# --------------------------------------------------------------------------------------------------
+#!/bin/bash
 
 # adjust this paths to your environment
 export PATH=/mnt/c/Users/your-USERNAME/gsudo/x64/:$PATH
 export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:$PATH
-
 
 change_wsl_ssh_ip(){
   # define your dns name
@@ -74,6 +63,7 @@ change_wsl_ssh_ip(){
   grep "$_wsl_ssh_ip_name" $_wslhosts
 }
 
+# run the function
 change_wsl_ssh_ip
 
 ```
