@@ -10,7 +10,9 @@ gsudo is a `sudo` equivalent for Windows, with a similar user-experience as the 
 ### Usage:
 1. Download gsudo in Windows and install. For example, I did portable installation in `%USERPROFILE%\gsudo\`
 
-2. Add this script to ~/.bashrc and define your dns name in `_wsl_ssh_ip_name` variable.
+2. Add this script to ~/.bashrc and   
+Define your dns name in `_wsl_ssh_ip_name` variable.  
+Add location from gsudo and WindowsPowerShell to `PATH` environment variable in the script.
 
 ```bash
 #!/bin/bash
@@ -60,14 +62,12 @@ change_wsl_ssh_ip
 
 ```
 
-3. Add location from gsudo and WindowsPowerShell to `PATH` environment variable in the script.
-
-4. Now shutdown and restart your wsl to check whether the bash script works.
+3. Now shutdown and restart your wsl to check whether the bash script works.
 ```bash
 C:\>wsl --shutdown
 ```
 
-5. Finally check the stdout that the content of the Windows hosts file has changed.
+4. Finally check the stdout that the content of the Windows hosts file has changed.
 ```bash
 ...
 123.45.67.89  ubuntu2004.wsl 
