@@ -17,7 +17,7 @@ https://github.com/gerardog/gsudo
 
 将你下载的gsudo和powershell.exe对应的wsl路径加到脚本里的PATH里 
 
-修改 脚本里 _wsl_ssh_ip_name 为你想要的名字,这里是 "ubuntu2004.wsl"
+修改脚本里 _wsl_ssh_ip_name 变量的值为你想要的名字,这里是 "ubuntu2004.wsl"
 
 
 ```bash
