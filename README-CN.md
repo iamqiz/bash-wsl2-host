@@ -22,10 +22,12 @@ https://github.com/gerardog/gsudo
 https://github.com/ScoopInstaller/Scoop#installation  
 通过scoop安装gsudo如下:  
 `scoop install gsudo`
+安装后在cmd里执行`where gsudo` 查看位置,我的在:  
+C:\Users\用户名\scoop\apps\gsudo\current\gsudo
 
 2. 下载本仓库下的bash脚本,内容如下
 
-将你下载的gsudo和powershell.exe对应的wsl路径加到脚本里的PATH里 
+将你下载的gsudo和powershell.exe对应的wsl路径(不是windows路径)加到脚本里的PATH里 
 
 修改脚本里 _wsl_ssh_ip_name 变量的值为你想要的名字,这里是 "ubuntu2004.wsl"
 
@@ -33,8 +35,8 @@ https://github.com/ScoopInstaller/Scoop#installation
 ```bash
 #!/bin/bash
 
-# adjust this paths to your environment
-export PATH=/mnt/c/Users/<你的用户名>/gsudo/x64/:$PATH
+# adjust this paths to your environment 下面改成你的gsudo位置; powershell路径一般就是这个路径
+export PATH=/mnt/c/Users/用户名/scoop/apps/gsudo/current/:$PATH
 export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:$PATH
 
 change_wsl_ssh_ip(){
