@@ -18,8 +18,10 @@ https://github.com/gerardog/gsudo
 ### 使用方法
 
 1. 首先需要在windows端安装好gsudo(我是通过scoop 下载gsudo的)  
-scoop安装指令见:
-https://github.com/ScoopInstaller/Scoop#installation
+如何安装scoop见:
+https://github.com/ScoopInstaller/Scoop#installation  
+通过scoop安装gsudo如下:  
+`scoop install gsudo`
 
 2. 下载本仓库下的bash脚本,内容如下
 
