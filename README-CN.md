@@ -21,7 +21,7 @@ https://github.com/gerardog/gsudo
 如何安装scoop见:
 https://github.com/ScoopInstaller/Scoop#installation  
 通过scoop安装gsudo如下:  
-`scoop install gsudo`
+`scoop install gsudo`  
 安装后在cmd里执行`where gsudo` 查看位置,我的在:  
 C:\Users\用户名\scoop\apps\gsudo\current\gsudo
 
