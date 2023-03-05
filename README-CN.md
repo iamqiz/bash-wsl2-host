@@ -1,6 +1,12 @@
 # wsl2hosts
 [English DOC](README.md)
 ## 一个bash脚本实现自动更新windows hosts,来映射到WSL的ip地址
+### 介绍
+在windows里若想连接WSL(适用于Windows的Linux子系统),需要通过WSL的ip,但是该ip在每次重启wsl后都会改变,  
+解决方法是将wsl的ip跟一个固定名称(比如说ubuntu2004.wsl)绑定,写在windows hosts文件(C:\Windows\System32\drivers\etc\hosts)里,  
+然后每次在wsl重启后都自动更新windows hosts文件里的ip为wsl当前的ip, 就可以始终使用 ubuntu2004.wsl 这个名称来ssh连接到WSL.
+windows hosts里会有下面这样一行(这里ip是示例,表示wsl的ip):  
+`123.45.67.89  ubuntu2004.wsl`
 
 ### 依赖
 只需要安装一个工具,叫gsudo,用来以管理员身份运行命令, 否则没有权限修改windows hosts文件
@@ -24,7 +30,7 @@ https://github.com/gerardog/gsudo
 #!/bin/bash
 
 # adjust this paths to your environment
-export PATH=/mnt/c/Users/your-USERNAME/gsudo/x64/:$PATH
+export PATH=/mnt/c/Users/<你的用户名>/gsudo/x64/:$PATH
 export PATH=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:$PATH
 
 change_wsl_ssh_ip(){
